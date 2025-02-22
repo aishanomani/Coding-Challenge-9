@@ -36,3 +36,22 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails()); // Expected output
 console.log(mgr1.calculateBonus()); // Expected output
 
+// Task 3: Creating a Company Class
+console.log("********** Created Company Class **********");
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    listEmployees() {
+        this.employees.forEach(emp => console.log(emp.getDetails()));
+    }
+}
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees(); // Expected output
+
