@@ -68,6 +68,15 @@ Company.prototype.calculateTotalPayroll = function() {
     });
     return totalPayroll;
   };
-  console.log(company.calculateTotalPayroll());
+  console.log(company.calculateTotalPayroll()); // Expected Output
 
-  
+// Task 5: Implementing Promotions
+console.log("********** Implemented Promotion System **********");
+Company.prototype.promoteToManager = function(employee, teamSize) {
+    const index = this.employees.indexOf(employee);
+    if (index !== -1) {
+        this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    }
+};
+company.promoteToManager(emp1, 3);
+company.listEmployees(); // Expected output
