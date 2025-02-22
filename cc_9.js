@@ -55,3 +55,19 @@ company.addEmployee(emp1);
 company.addEmployee(mgr1);
 company.listEmployees(); // Expected output
 
+// Task 4: Implementing a Payroll System
+console.log("********** Implemented Payroll System **********");
+Company.prototype.calculateTotalPayroll = function() {
+    let totalPayroll = 0;
+    this.employees.forEach(employee => {
+      if (employee instanceof Manager) {
+        totalPayroll += employee.calculateAnnualSalary() + employee.calculateBonus();
+      } else {
+        totalPayroll += employee.calculateAnnualSalary();
+      }
+    });
+    return totalPayroll;
+  };
+  console.log(company.calculateTotalPayroll());
+
+  
